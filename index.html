@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qual a sua prancha? — Session Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <img src="assets/logo-session-store.png" alt="Session Store">
+  </div>
+
+  <header class="hero" id="screen-hero">
+    <p class="kicker">Recomendador de pranchas</p>
+    <h1>Qual prancha<br><span>é a sua?</span></h1>
+    <p class="lede">Um questionário completo sobre seu corpo, sua experiência e como você surfa hoje — pra cruzar com o catálogo da Session Store e indicar as pranchas certas pra sua evolução.</p>
+    <button class="btn" onclick="iniciar()">Começar</button>
+  </header>
+
+  <div class="card hidden" id="screen-quiz">
+    <div class="progress"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <p class="step-label" id="stepLabel"></p>
+    <div id="questionArea"></div>
+    <div class="nav-row">
+      <button class="back-link" onclick="voltar()">← Voltar</button>
+      <div id="navRight"></div>
+    </div>
+  </div>
+
+  <div class="card hidden" id="screen-results">
+    <div class="results">
+      <h2>As melhores pranchas pra você</h2>
+      <p class="sub" id="resultsSub"></p>
+      <div class="profile-box" id="profileBox"></div>
+      <div id="resultsList"></div>
+
+      <div class="contact-box">
+        <p class="contact-title">Quer confirmar com quem entende do assunto?</p>
+        <p class="contact-sub">Fala com a gente pelo WhatsApp pra um atendimento personalizado sobre essas pranchas.</p>
+        <a class="btn whatsapp" id="whatsappLink" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn secondary instagram" href="https://www.instagram.com/sessionstore/" target="_blank" rel="noopener">@sessionstore no Instagram</a>
+      </div>
+
+      <p class="note">Estimativa de ponto de partida, calculada a partir de todas as respostas — não substitui experimentar a prancha na água ou a opinião de um shaper.</p>
+      <button class="btn secondary restart" onclick="restart()">Refazer o questionário</button>
+    </div>
+  </div>
+
+  <p class="footer-brand">SESSION STORE · Desde 2003 · Criciúma/SC</p>
+
+</div>
+
+<script src="js/data/questions.js"></script>
+<script src="js/data/catalogo.js"></script>
+<script src="js/state.js"></script>
+<script src="js/recommender.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/results.js"></script>
+
+</body>
+</html>
